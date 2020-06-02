@@ -1,6 +1,7 @@
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for [ @offer, @booking ] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
   <%= f.input :place %>
-  <%= f.submit "Book a DJ", class: "btn btn-primary" %>
+  <%= f.input :confirmation %>
+  <%= f.submit "Book the DJ", class: "btn btn-primary" %>
 <% end %>
