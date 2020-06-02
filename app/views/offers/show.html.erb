@@ -13,3 +13,14 @@
   method: :delete,
   data: { confirm: "Are you sure ?"}
   %></p>
+
+  <p><%= link_to "Réserver DJ", new_offer_booking_path(@offer) %></p>
+
+  <p><%= link_to "Supprimer ma résa",
+  offers_path,
+  method: :delete,
+  data: { confirm: "Are you sure ?"}
+  %></p>
+
+  <p><%= link_to "Retour", offers_path %></p>
+
