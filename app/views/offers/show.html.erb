@@ -1,15 +1,27 @@
-<h1>Welcome on <%=  @offer.title %></h1>
 
-<%= @offer.description %>
-<br>
-<p> <%= @offer.price_per_day %>€/J</p>
 
-<p><%= link_to "Change ton offre", edit_offer_path(@offer) %></p>
 
-<p><%= link_to "Voir tous les DJ", offers_path %></p>
 
-<p><%= link_to "Supprimer mon offre",
+
+<div class="container">
+  <h2 class="home"><span>Welcome on <%=  @offer.title %></span></h2>
+<div class="card mb-3">
+  <% if @offer.photo.attached? %>
+<div class="card-img-top"><%= cl_image_tag @offer.photo.key %></div>
+<% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= @offer.description %></h5>
+    <p class="card-text"><%= @offer.price_per_day %>€/J</p>
+    <p class="button"><%= link_to "Change ton offre", edit_offer_path(@offer) %></p>
+
+<p class="button"><%= link_to "Voir tous les DJ", offers_path %></p>
+
+<p class="button" ><%= link_to "Supprimer mon offre",
   offer_path(@offer),
   method: :delete,
   data: { confirm: "Are you sure ?"}
   %></p>
+  </div>
+</div>
+
+</div>
