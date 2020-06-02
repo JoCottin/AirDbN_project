@@ -1,0 +1,9 @@
+<h1>Welcome on <%=  @offer.title %></h1>
+
+<%= @offer.description %>
+<br>
+<p> <%= @offer.price_per_day %>€/J</p>
+
+<p><%= link_to "Réserve ce DJ", new_offer_booking_path %></p>
+
+<p><%= link_to "Retour", offers_path %></p>

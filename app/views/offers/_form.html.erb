@@ -1,6 +1,34 @@
+<<<<<<< HEAD
 <%= simple_form_for(@offer) do |f| %>
 <%= f.input :title %>
 <%= f.input :description %>
 <%= f.input :price_per_day %>
 <%= f.submit "Let's mix!" %>
 <% end %>
+=======
+<div class="container">
+
+<%= simple_form_for(@offer) do |f| %>
+<form>
+  <div class="form-group">
+
+<%= f.input :title %>
+</div>
+<div class="form-group">
+<%= f.input :description %>
+</div>
+<div class="form-group">
+<%= f.input :price_per_day %>
+</div>
+<div class="form-group">
+
+<%= f.input :photo, as: :file %>
+</div>
+<input type="submit" name="commit" class="button" value="Let's mix!" data-disable-with="Let's mix!">
+
+<% end %>
+</form>
+
+</div>
+
+>>>>>>> 79c4f2bf4c50efa6b5cf75539cca30085d982e19

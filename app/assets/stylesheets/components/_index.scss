@@ -2,3 +2,147 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+@import url('https://fonts.googleapis.com/css?family=Red+Hat+Display:900&display=swap');
+
+$color: #EA4362;
+
+h2{
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+}
+
+
+
+
+// titre
+
+h2 {
+  font-size: 6vw;
+  max-width: 85vw;
+  color: #262C35;
+
+  span {
+    background-image: linear-gradient(
+      transparent calc(65% - 5px),
+      darken($color, 15%) 5px,
+    );
+    background-size: 0;
+    background-repeat: no-repeat;
+    display: inline;
+    transition: 0.5s ease;
+  }
+
+  &:hover {
+    span {
+      background-size: 100%;
+    }
+  }
+}
+
+
+
+//fin titre
+
+
+a {
+  text-decoration: none !important;
+  color: black;
+  &:hover{
+  color: black !important;
+}
+}
+
+
+
+.button a{
+  color: white !important;
+}
+
+
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  transition: transform 200ms ease-in-out;
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.card-product img {
+  height: 90%;
+  width: 120px;
+  object-fit: contain;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.home{
+
+  text-align: center;
+  padding: 20px;
+
+}
+//button propose tes services
+.prop:hover {
+    color: white !important;
+}
+
+
+
+.button{
+    background-image: linear-gradient(to top left,#ff8a00,#e52e71)!important;
+    color: #fff!important;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 700;
+    border: 0;
+    border-radius: 8px!important;
+    white-space: nowrap;
+    padding: 1rem 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    transition: .07s;
+    position: relative;
+    text-decoration: none!important;
+    *, :after, :before {
+    box-sizing: border-box;
+}
+ &:hover{
+  color: white !important;
+}
+}
+
+#title{
+  color: black;
+}
+
+
+.white{
+  color: white !important;
+}
+
+.card-img-top img{
+  width: 100%;
+  max-height: 600px;
+}

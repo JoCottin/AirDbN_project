@@ -1,0 +1,17 @@
+<h2 class="home">ALL MY BOOKINGS </h2>
+
+<div class="container">
+<p >Number of bookings : <%= @bookings.count %></p>
+<% @bookings.each do |booking| %>
+
+<div class="card-product mb-4">
+  <img src="https://res.cloudinary.com/dos4x9flk/image/upload/c_scale,h_1000,q_100,r_50,w_1000/v1591032643/Calque_1_cn3q4e.png" />
+  <div class="card-product-infos">
+    <h2><%= booking.start_date %></h2>
+    <p><%= booking.end_date %> $</p>
+    <p><%= booking.place %></p>
+  </div>
+</div>
+
+<% end %>
+</div>
