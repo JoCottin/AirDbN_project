@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2020_06_02_082942) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+
   create_table "offers", force: :cascade do |t|
     t.string "title"
     t.integer "price_per_day"
