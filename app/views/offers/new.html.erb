@@ -1,26 +1,4 @@
 
 
-<div class="container">
-
-<%= simple_form_for(@offer) do |f| %>
-<form>
-  <div class="form-group">
-
-<%= f.input :title %>
-</div>
-<div class="form-group">
-<%= f.input :description %>
-</div>
-<div class="form-group">
-<%= f.input :price_per_day %>
-</div>
-
-<input type="submit" name="commit" class="button" value="Let's mix!" data-disable-with="Let's mix!">
-
-<% end %>
-</form>
-
-</div>
-
-
+<%= render "form" %>
 
