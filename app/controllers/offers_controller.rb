@@ -1,10 +1,11 @@
 class OffersController < ApplicationController
+  before_action :set_offer, only: [:show, :edit, :update, :destroy]
+
   def index
     @offers = Offer.all
   end
 
   def show
-    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -26,12 +27,20 @@ class OffersController < ApplicationController
   end
 
   def update
+    @offer.update(offer_params)
+    redirect_to offer_path(@offer)
   end
 
   def destroy
+    @offer.destroy
+    redirect_to offers_path
   end
 
   private
+
+  def set_offer
+    @offer = Offer.find(params[:id])
+  end
 
   def offer_params
     params.require(:offer).permit(:title, :description, :price_per_day)

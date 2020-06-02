@@ -1,11 +1,22 @@
-<h1>All the DJ you need ! <%= @offers.count %></h1>
 
-<ul>
+
+<h2 class="home">ALL THE DJ </h2>
+
+<div class="container">
+<p >Number of offers : <%= @offers.count %></p>
 <% @offers.each do |offer| %>
-<li><%= offer.title %></li>
-<%= offer.description %>
-<p><%= offer.price_per_day %>€/J</p>
-<% end %>
-</ul>
 
-<%= link_to "Propose tes services", new_offer_path(@offer) %>
+<div class="card-product mb-4">
+  <img src="https://res.cloudinary.com/dos4x9flk/image/upload/c_scale,h_1000,q_100,r_50,w_1000/v1591032643/Calque_1_cn3q4e.png" />
+  <div class="card-product-infos">
+    <h2><%= offer.title %></h2>
+    <p><%= offer.price_per_day %> $</p>
+    <p><%= offer.description %></p>
+  </div>
+</div>
+
+<% end %>
+<button type="button" class="button"><a class="prop" href="/offers/new">Propose tes services</a></button>
+</div>
+
+
