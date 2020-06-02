@@ -8,9 +8,18 @@ class OffersController < ApplicationController
   end
 
   def new
+    @offer = Offer.new
   end
 
   def create
+    @offer = Offer.new(offer_params)
+    @user = User.find(current_user.id)
+    @offer.user = @user
+    if @offer.save
+      redirect_to offer_path(@offer)
+    else
+      render :new
+    end
   end
 
   def edit
