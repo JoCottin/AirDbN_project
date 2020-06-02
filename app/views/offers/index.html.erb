@@ -1,1 +1,11 @@
 <h1>All the DJ you need ! <%= @offers.count %></h1>
+
+<ul>
+<% @offers.each do |offer| %>
+<li><%= offer.title %></li>
+<%= offer.description %>
+<p><%= offer.price_per_day %>€/J</p>
+<% end %>
+</ul>
+
+<%= link_to "Propose tes services", new_offer_path(@offer) %>
