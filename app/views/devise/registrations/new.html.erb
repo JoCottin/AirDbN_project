@@ -18,11 +18,9 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+                <p>Are you a DJ ?
     <%= f.check_box :dj,
-                required: true,
-                label: 'Are you a DJ?',
-                input_html: { autocomplete: "Are you a DJ?" } %>
-%>
+                required: true%> </p>
   </div>
 
   <div class="form-actions">
