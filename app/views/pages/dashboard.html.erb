@@ -1,13 +1,12 @@
 <h2 class="home"><span>Your Bookings</span></h2>
 
 <% if @user.dj %>
-<div class=" iphone d-flex justify-content-around">
-
+  <div class=" iphone d-flex justify-content-around">
     <% @offers.each do |offer|  %>
 
       <% offer.bookings.each do |booking| %>
-
       <div class="container .col-xs-8 .col-sm-6">
+
 
         <div class="card">
           <h2 class="small"><span>Welcome on <%= booking.offer.title %></span></h2>
@@ -19,18 +18,17 @@
             <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           </div>
         </div>
-      </div>
+    </div>
     <% end %>
   <% end %>
   </div>
 
   <% else %>
   <div class=" iphone d-flex justify-content-around">
-
   <% current_user.bookings.each do |booking| %>
-     <div class="container .col-xs-8 .col-sm-6">
+  <div class="container .col-xs-8 .col-sm-6">
 
-      <div class="card ">
+      <div class="card">
         <h2 class="small"><span>Welcome on <%= booking.offer.title %></span></h2>
 
         <div class="card-body">
@@ -40,10 +38,9 @@
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
         </div>
       </div>
-    </div>
   </div>
   <% end %>
+  </div>
+
 <% end %>
-
-
 

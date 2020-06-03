@@ -156,17 +156,9 @@ a {
   max-height: 600px;
 }
 
-.dash{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 @media screen and (max-width : 860px) {
   .iphone  {
       display:flex;
       flex-direction: column;
   }
 }
-
