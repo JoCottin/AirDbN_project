@@ -2,23 +2,36 @@
 
 <h2 class="home"> <span>ALL THE DJ </span></h2>
 
-<div class="container">
-<p >Number of offers : <%= @offers.count %></p>
+
+<h1 >Number of offers : <%= @offers.count %></h1>
+<br>
+<div class="cards">
+
 <% @offers.each do |offer| %>
 
-<div class="card-product mb-4">
-  <% if offer.photo.attached? %>
-  <div class="card-img-top"><%= cl_image_tag offer.photo.key %></div>
-  <% end %>
-  <div class="card-product-infos">
-    <h2><%= link_to offer.title, offer_path(offer) %></h2>
-    <p><%= offer.price_per_day %> $</p>
-    <p><%= offer.description %></p>
+<div class="card">
+  <%= link_to offer_path(offer) do %>
+
+  <div class="card-top">
+    <% if offer.photo.attached? %>
+      <%= cl_image_tag offer.photo.key, class:"height-image" %>
+    <% end %>
   </div>
+
+  <div class="description">
+    <h1 class="y"><%= link_to offer.title, offer_path(offer) %></h1>
+    <h1 class="des">Price of the prestation</h1> <p><%= offer.price_per_day %> $</p>
+    <h1 class="des">Description </h1> <p> <%= offer.description %></p>
+  </div>
+  <% end %>
 </div>
 
-<% end %>
 
+
+<% end %>
+</div>
+
+<div class="cards">
 <% if policy(Offer).create? %>
   <%= link_to "Propose tes services", new_offer_path, class: "button" %>
 <% end %>

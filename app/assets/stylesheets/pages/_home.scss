@@ -10,9 +10,10 @@ $font: 'Roboto Condensed', sans-serif;
 .js{
   text-align: center;
   padding-top: 13%;
-
 }
-
+#add-padding-bottom{
+  padding-bottom: 22px;
+}
 #js{
   cursor: pointer;
   font-family: $font;
