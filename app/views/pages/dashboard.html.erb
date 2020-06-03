@@ -1,14 +1,16 @@
 <% if @user.dj %>
 
-    <h2 class="home"><span>Your Bookings</span></h2>
 
+ <h2 class="home"><span>Your Bookings</span></h2>
+
+
+<div class=" iphone d-flex justify-content-around">
 
     <% @offers.each do |offer|  %>
 
       <% offer.bookings.each do |booking| %>
-      <div class="container ">
 
-      <div class="col-sm-6 mb-4">
+      <div class="container .col-xs-8 .col-sm-6">
 
 
         <div class="card">
@@ -27,14 +29,12 @@
   <% end %>
 
   <% else %>
-
+  <div class=" iphone d-flex justify-content-around">
+    
   <% current_user.bookings.each do |booking| %>
-  <div class="container ">
+     <div class="container .col-xs-8 .col-sm-6">
 
-    <div class="col-sm-6 mb-4">
-
-
-      <div class="card">
+      <div class="card ">
         <h2 class="small"><span>Welcome on <%= booking.offer.title %></span></h2>
 
         <div class="card-body">
@@ -47,8 +47,6 @@
     </div>
   </div>
   <% end %>
-
-
 <% end %>
 
 
