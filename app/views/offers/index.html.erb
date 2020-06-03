@@ -16,5 +16,8 @@
 </div>
 
 <% end %>
-<a class="button" href="/offers/new">Propose tes services</a>
+
+<% if policy(Offer).create? %>
+  <%= link_to "Propose tes services", new_offer_path, class: "button" %>
+<% end %>
 </div>
