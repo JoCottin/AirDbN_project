@@ -7,7 +7,9 @@
 <% @offers.each do |offer| %>
 
 <div class="card-product mb-4">
-  <img src="https://res.cloudinary.com/dos4x9flk/image/upload/c_scale,h_1000,q_100,r_50,w_1000/v1591032643/Calque_1_cn3q4e.png" />
+  <% if offer.photo.attached? %>
+  <div class="card-img-top"><%= cl_image_tag offer.photo.key %></div>
+  <% end %>
   <div class="card-product-infos">
     <h2><%= link_to offer.title, offer_path(offer) %></h2>
     <p><%= offer.price_per_day %> $</p>

@@ -21,9 +21,9 @@
   data: { confirm: "Are you sure ?"}
   %></p>
 <% end %>
-
+<% if policy(Booking).create? %>
 <p class="button"><%= link_to "Réserve ce DJ", new_offer_booking_path(@offer) %></p>
-
+<% end %>
   </div>
 </div>
 

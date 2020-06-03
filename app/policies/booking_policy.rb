@@ -16,5 +16,4 @@ class BookingPolicy < ApplicationPolicy
   def is_user_not_a_dj?
     user.dj == false
   end
-
 end
