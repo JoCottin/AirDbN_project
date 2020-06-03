@@ -17,6 +17,13 @@ h2{
 
 // titre
 
+.small{
+  font-size: 23px !important;
+  text-align: center !important;
+  padding-top: 30px;
+
+}
+
 h2 {
   font-size: 6vw;
   max-width: 85vw;
@@ -103,6 +110,8 @@ a {
   padding: 20px;
 
 }
+
+
 //button propose tes services
 .prop:hover {
     color: white !important;
