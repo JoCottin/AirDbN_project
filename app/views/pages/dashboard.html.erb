@@ -1,3 +1,32 @@
+<h2 class="home"><span>Your Bookings</span></h2>
+
+
 <% @bookings.each do |booking|  %>
-<%= booking.offer.title %>
+
+
+
+<div class="container ">
+
+
+
+
+
+    <div class="col-sm-6 mb-4">
+
+      <div class="card">
+        <h2 class="small"><span>Welcome on <%= booking.offer.title %></span></h2>
+
+        <div class="card-body">
+          <h5 class="card-title">Start date : <%= booking.start_date %></h5>
+          <h5 class="card-title">End date : <%= booking.end_date %></h5>
+          <p class="card-text">Place : <%= booking.place %></p>
+          <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
+        </div>
+      </div>
+    </div>
+
+</div>
 <% end  %>
+
+
+
