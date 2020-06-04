@@ -33,6 +33,12 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :place, :confirmation)
+    params.require(:booking).permit(:start_date, :place, :duration)
   end
+
+  def total_price
+    @offer = Offer.find(params[:offer_id])
+    @booking.total_price = @offer.price_per_day * @booking.duration
+  end
+
 end
