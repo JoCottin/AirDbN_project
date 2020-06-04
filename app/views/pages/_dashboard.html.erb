@@ -10,11 +10,10 @@
 
           <div class="description">
             <h5 class="card-title">Start date : <%= booking.start_date %></h5>
-            <h5 class="card-title">End date : <%= booking.end_date %></h5>
+            <h5 class="card-title">Duration : <%= booking.duration %> Heures</h5>
             <p class="card-text">Place : <%= booking.place %></p>
             <% price = booking.offer.price_per_day %>
-            <p class="card-text">Price per day : <%= price %>€/J</p>
-            <p class="card-text">Price of the performance : <%= ((booking.end_date)-(booking.start_date)) * price %>€</p>
+            <p class="card-text">Price per day : <%= offer.price_per_day * booking.duration %>€/J</p>
 
             <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           </div>
@@ -25,6 +24,7 @@
   <div id="map"
      style="width: 100%; height: 300px;"
      data-markers="<%= @markers.to_json %>">
+</div>
   </div>
 
   <% else %>
@@ -39,8 +39,11 @@
 
         <div class="description">
           <h5 class="card-title">Start date : <%= booking.start_date %></h5>
-          <h5 class="card-title">End date : <%= booking.end_date %></h5>
+          <h5 class="card-title">Duration : <%= booking.duration%> Heures</h5>
           <p class="card-text">Place : <%= booking.place %></p>
+          <% price = booking.offer.price_per_day %>
+          <p class="card-text">Price per day : <%= price %>€/J</p>
+          <p class="card-text">Price per day : <%= booking.offer.price_per_day * booking.duration %>€/J</p>
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
 
           <%= link_to "Cancel my party", booking_path(booking), class: "button",
