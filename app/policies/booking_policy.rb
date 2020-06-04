@@ -22,8 +22,4 @@ class BookingPolicy < ApplicationPolicy
   def user_not_a_dj?
     user.dj == false
   end
-
-  def destroy?
-    record.user == user
-  end
 end
