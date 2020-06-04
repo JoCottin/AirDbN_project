@@ -10,10 +10,16 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def create?
-    is_user_not_a_dj?
+    user_not_a_dj?
   end
 
-  def is_user_not_a_dj?
+  def destroy?
+    record.user == user
+  end
+
+  private
+
+  def user_not_a_dj?
     user.dj == false
   end
 end

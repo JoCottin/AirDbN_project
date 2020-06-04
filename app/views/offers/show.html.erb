@@ -12,15 +12,6 @@
     <% end %>
 <p class="button"><%= link_to "Voir tous les DJ", offers_path %></p>
 
-<% if policy(@offer).destroy? %>
-
-  <p class="button" ><%= link_to "Supprimer mon offre",
-
-  offer_path(@offer),
-  method: :delete,
-  data: { confirm: "Are you sure ?"}
-  %></p>
-<% end %>
 <% if policy(Booking).create? %>
 <p class="button"><%= link_to "Réserve ce DJ", new_offer_booking_path(@offer) %></p>
 <% end %>
