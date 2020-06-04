@@ -1,4 +1,5 @@
 <% if @user.dj %>
+<h1>Salut mon DJ</h1>
   <div class=" iphone d-flex justify-content-around">
     <% @offers.each do |offer|  %>
 
@@ -13,6 +14,10 @@
             <h5 class="card-title">Start date : <%= booking.start_date %></h5>
             <h5 class="card-title">End date : <%= booking.end_date %></h5>
             <p class="card-text">Place : <%= booking.place %></p>
+            <% price = booking.offer.price_per_day %>
+            <p class="card-text">Price per day : <%= price %>€/J</p>
+            <p class="card-text">Price of the performance : <%= ((booking.end_date)-(booking.start_date)) * price %>€</p>
+
             <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           </div>
         </div>
@@ -25,6 +30,7 @@
   </div>
 
   <% else %>
+  <h1>Salut le gueux</h1>
   <div class=" iphone d-flex justify-content-around">
   <% current_user.bookings.each do |booking| %>
   <div class="container .col-xs-8 .col-sm-6">
