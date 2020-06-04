@@ -25,6 +25,7 @@ $font: 'Roboto Condensed', sans-serif;
   filter: blur(0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  mix-blend-mode: color-dodge;
   .lol{
     font-size: 70px;
     margin: 0;
@@ -33,6 +34,7 @@ $font: 'Roboto Condensed', sans-serif;
     position: relative;
     transition: transform $ease $time;
     padding: 0 0.1em;
+
 
     @for $i from 0 through $number{
       &:nth-child(#{$i}n){ transition-delay: $time*$i/$number;}
@@ -49,6 +51,7 @@ $font: 'Roboto Condensed', sans-serif;
       transform-origin: top center;
       transform: scaley(0.1);
       transition: transform $ease $time;
+
     }
   }
   &:hover{
@@ -71,4 +74,13 @@ $font: 'Roboto Condensed', sans-serif;
     }
   }
 
+}
+
+#find_best{
+    color: black;
+    line-height: 1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
 }
