@@ -79,9 +79,10 @@ h1 {
   top: 0;
   left: 0;
   bottom: 0;
-  fill: linear-gradient(to right left,#ff8a00,#e52e71);
+
+  fill: black;
   width: 50vmax;
-  z-index: -2;
+  z-index: -3;
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
