@@ -4,35 +4,14 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-
-    # if @user.dj == true
     @offers = current_user.offers
+    @bookings = Booking.geocoded
 
-    #   if @booking == offer.id
-    #     return @booking
-    #   else
-    #     return "No booking yet"
-    #   end
-
-    # else
-    #   @bookings = current_user.bookings
-    # end
-
-    # @bookings = current_user.bookings
-    # @booking.offer =
-
-    # if @booking.offer_id == offer.id
-    #   @booking
-    # end
-
-    # if @user.dj == true
-    #   @offers = current_user.offers
-    #   @offers.each do |offer|
-    #     @booking = Booking.find(offer.id)
-    #     offer.booking
-    #   end
-    # else
-    #   @bookings = current_user.bookings
-    # end
+    @markers = @bookings.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 end
