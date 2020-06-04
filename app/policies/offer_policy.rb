@@ -13,11 +13,11 @@ class OfferPolicy < ApplicationPolicy
     user_is_dj?
   end
 
-  def destroy?
+  def update?
     record.user == user
   end
 
-  def update?
+  def destroy?
     record.user == user
   end
 
