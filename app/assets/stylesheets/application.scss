@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import 'mapbox-gl/dist/mapbox-gl';
 
 
 
@@ -51,10 +52,13 @@ body {
 }
 .content {
   flex: 1 0 auto;
+  padding-bottom: 50px;
+  overflow: hidden;
 }
 .footer {
   flex-shrink: 0;
-  margin-top: 50px;
+  margin-top: 80px;
+
 }
 
 // blob
@@ -70,8 +74,6 @@ h1 {
   letter-spacing: 2px;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
-
-  padding-left: 30px;
 }
 
 .blob {
@@ -82,7 +84,7 @@ h1 {
 
   fill: black;
   width: 50vmax;
-  z-index: -3;
+  z-index: -1;
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
