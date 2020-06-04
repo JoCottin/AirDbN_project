@@ -39,8 +39,11 @@
 
         <div class="description">
           <h5 class="card-title">Start date : <%= booking.start_date %></h5>
-          <h5 class="card-title">End date : <%= booking.end_date %></h5>
+          <h5 class="card-title">Duration : <%= booking.duration%> Heures</h5>
           <p class="card-text">Place : <%= booking.place %></p>
+          <% price = booking.offer.price_per_day %>
+          <p class="card-text">Price per day : <%= price %>€/J</p>
+          <p class="card-text">Price for performance : <%= ((booking.duration) * price) %>€/H</p>
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
 
           <%= link_to "Cancel my party", booking_path(booking), class: "button",
