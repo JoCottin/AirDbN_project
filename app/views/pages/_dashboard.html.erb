@@ -24,6 +24,9 @@
     </div>
     <% end %>
   <% end %>
+  <div id="map"
+     style="width: 100%; height: 300px;"
+     data-markers="<%= @markers.to_json %>">
   </div>
 
   <% else %>
@@ -40,9 +43,9 @@
           <h5 class="card-title">End date : <%= booking.end_date %></h5>
           <p class="card-text">Place : <%= booking.place %></p>
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
-          <%= link_to "Supprimer mon booking", booking_path(booking), class: "button",
+          <%= link_to "Cancel my party", booking_path(booking), class: "button",
           method: :delete,
-          data: { confirm: 'Are you sure?'} %>
+          data: { confirm: "Are you sure?"} %>
         </div>
       </div>
   </div>
