@@ -10,6 +10,7 @@ $font: 'Roboto Condensed', sans-serif;
 .js{
   text-align: center;
   padding-top: 13%;
+  z-index:1;
 }
 #add-padding-bottom{
   padding-bottom: 22px;
@@ -77,10 +78,11 @@ $font: 'Roboto Condensed', sans-serif;
 }
 
 #find_best{
-    color: black;
+    color: #F4F4F4;
     line-height: 1;
     font-weight: bold;
     letter-spacing: 2px;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
+    mix-blend-mode: difference;
 }

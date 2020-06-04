@@ -8,30 +8,17 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap";
+import { initMapbox } from '../plugin/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
+  initMapbox();
 });
 
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FtYmFzIiwiYSI6ImNrYjBwc2M4YjA3MGIycXJ4dWhsNDQycnkifQ.BJVoXHGwln6nOVDJO7AXLA';
-const map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11'
-});
 
-const mapElement = document.getElementById('map');
-const markers = JSON.parse(mapElement.dataset.markers);
-markers.forEach((marker)=> {
-  new mapboxgl.Marker()
-  .setLngLat([marker.lng, marker.lat])
-  .addTo(map);
-});
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
@@ -49,9 +36,6 @@ markers.forEach((marker)=> {
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
+
+
