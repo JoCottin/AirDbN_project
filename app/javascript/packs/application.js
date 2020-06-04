@@ -33,31 +33,18 @@ document.addEventListener('turbolinks:load', () => {
 // External imports
 import "bootstrap";
 
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { initAutocomplete } from '../plugins/init_autocomplete';
-
-initAutocomplete();
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
 
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
+import { initMapbox } from '../plugins/init_mapbox'
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FtYmFzIiwiYSI6ImNrYjBwc2M4YjA3MGIycXJ4dWhsNDQycnkifQ.BJVoXHGwln6nOVDJO7AXLA';
-  const map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
-  });
-
-  const mapElement = document.getElementById('map');
-  const markers = JSON.parse(mapElement.dataset.markers);
-  markers.forEach((marker)=> {
-    new mapboxgl.Marker()
-    .setLngLat([marker.lng, marker.lat])
-    .addTo(map);
-});
-
+initMapbox();
+initAutocomplete();
 
