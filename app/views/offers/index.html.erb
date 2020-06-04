@@ -3,8 +3,13 @@
 <h2 class="home"> <span>ALL THE DJ </span></h2>
 </div>
 <br>
-
-<h1 >Number of offers : <%= @offers.count %></h1>
+<div class="container">
+<h1 >Number of offers : <%= @offers.count %> <br> </h1>
+<% if policy(Offer).create? %>
+<br>
+  <%= link_to "Propose tes services", new_offer_path, class: "button" %>
+<% end %>
+</div>
 
 <br>
 <div class="cards">
@@ -32,11 +37,7 @@
 
 
 <% end %>
-<div >
-<% if policy(Offer).create? %>
-  <%= link_to "Propose tes services", new_offer_path, class: "button" %>
-<% end %>
-</div>
+
 </div>
 
 
