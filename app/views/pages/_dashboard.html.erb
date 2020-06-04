@@ -14,6 +14,10 @@
             <h5 class="card-title">Start date : <%= booking.start_date %></h5>
             <h5 class="card-title">End date : <%= booking.end_date %></h5>
             <p class="card-text">Place : <%= booking.place %></p>
+            <% price = booking.offer.price_per_day %>
+            <p class="card-text">Price per day : <%= price %>€/J</p>
+            <p class="card-text">Price of the performance : <%= ((booking.end_date)-(booking.start_date)) * price %>€</p>
+
             <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           </div>
         </div>
