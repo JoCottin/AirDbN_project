@@ -1,15 +1,21 @@
-<div class="container">
+
+
+
+
+
+<div class="container" style="padding-top: 50px;">
+
 
 <%= simple_form_for [ @offer, @booking ] do |f| %>
-<form>
+
+
   <div class="form-group">
-
-  <%= f.input :start_date %>
-
+  <p>Start Date</p><input type="date" ><br><br>
   </div>
   <div class="form-group">
-  <%= f.input :end_date %>
+  <p>End Date</p><input type="date" >
   </div>
+
   <div class="form-group">
   <%= f.input :place %>
   </div>
