@@ -1,23 +1,46 @@
 <% if @user.dj %>
 
 <div class="container" style="padding-top: 20%;">
-<h2 class="home"><span>Salut mon DJ</span></h2>
-<h2 id="scroll">SCROLL DOWN TO SEE ALL YOUR BOOKINGS</h2>
+<h2 class="home"><span>Hello <%= @user.name %></span></h2>
+<h2 class="home"><span>Here are your offers.</span></h2>
+<h2 id="scroll">SCROLL DOWN TO SEE ALL YOUR OFFERS & BOOKINGS</h2>
 </div>
+
+
+  <div class="cards">
+      <% @offers.each do |offer|  %>
+
+          <div class="card">
+            <h2 class="small"><span><%= offer.title %></span></h2>
+            <div class="description">
+              <h5 class="card-title">Description: <%= offer.description %></h5>
+              <p class="card-text">Price per hour: <%= offer.price_per_day %>€/h</p>
+
+              <%= link_to "Go to the offer", offer_path(offer), class: "button" %>
+            </div>
+          </div>
+
+      <% end %>
+   </div>
+
+  <div class="container" style="padding-top: 10%; padding-left: 2px;">
+  <h2 class="home"><span>Here are your next events incoming.</span></h2>
+  </div>
+
   <div class="cards">
     <% @offers.each do |offer|  %>
 
       <% offer.bookings.each do |booking| %>
 
         <div class="card">
-          <h2 class="small"><span>WELCOME <%= booking.offer.title %></span></h2>
+          <h2 class="small"><span><%= booking.offer.title %></span></h2>
 
           <div class="description">
             <h5 class="card-title">Start date : <%= booking.start_date %></h5>
-            <h5 class="card-title">Duration : <%= booking.duration %> Heures</h5>
+            <h5 class="card-title">Duration : <%= booking.duration %> hours</h5>
             <p class="card-text">Place : <%= booking.place %></p>
             <% price = booking.offer.price_per_day %>
-            <p class="card-text">Price per day : <%= booking.duration * price  %>€/J</p>
+            <p class="card-text">Total : <%= booking.duration * price  %>€</p>
 
             <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           </div>
@@ -35,7 +58,8 @@
 
   <% else %>
   <div class="container" style="padding-top: 20%;">
-<h2 class="home"><span>Salut le gueux</span></h2>
+<h2 class="home"><span>Hello <%= @user.name %></span></h2>
+<h2 class="home"><span>You booked <%= current_user.bookings.count %> events.</span></h2>
 <h2 id="scroll">SCROLL DOWN TO SEE ALL YOUR BOOKINGS</h2>
 </div>
   <div class="cards">
@@ -43,16 +67,16 @@
 
       <div class="card">
 
-        <h2 class="small"><span>Welcome on <%= booking.offer.title %></span></h2>
+        <h2 class="small"><span>Offer: <%= booking.offer.title %></span></h2>
 
 
         <div class="description">
           <h5 class="card-title">Start date : <%= booking.start_date %></h5>
-          <h5 class="card-title">Duration : <%= booking.duration%> Heures</h5>
+          <h5 class="card-title">Duration : <%= booking.duration%> hours</h5>
           <p class="card-text">Place : <%= booking.place %></p>
           <% price = booking.offer.price_per_day %>
-          <p class="card-text">Price per day : <%= price %>€/J</p>
-          <p class="card-text">Price per day : <%= price * booking.duration %> €</p>
+          <p class="card-text">Price per hour : <%= price %>€/H</p>
+          <p class="card-text">Total price : <%= price * booking.duration %> €</p>
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
           <br>
           <%= link_to "Cancel my party", booking_path(booking), class: "button",
