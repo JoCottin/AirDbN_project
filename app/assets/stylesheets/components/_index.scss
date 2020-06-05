@@ -8,10 +8,7 @@
 
 $color: #EA4362;
 
-h2{
-  font-family: 'Roboto', sans-serif;
-  color: #333333;
-}
+
 
 
 
@@ -26,10 +23,10 @@ h2{
 }
 
 .home {
-  font-size: 6vw;
+  font-size: 3vw;
   color: #262C35;
-  text-align: center;
-  mix-blend-mode: difference;
+
+
 
   span {
 
@@ -43,6 +40,7 @@ h2{
     background-repeat: no-repeat;
     display: inline;
     transition: 0.5s ease;
+    mix-blend-mode: difference;
   }
 
   &:hover {
