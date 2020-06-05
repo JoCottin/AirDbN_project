@@ -1,6 +1,6 @@
 <div class="container">
   <div class="js1">
-  <h2 class="home" style="padding-bottom: 50px;"><span>Welcome on <%=  @offer.title %></span></h2>
+  <h2 class="home" style="padding-bottom: 50px;"><span>Welcome <%=  @offer.title %></span></h2>
 </div>
 <div class="card mb-3">
   <% if @offer.photo.attached? %>
@@ -8,7 +8,7 @@
 <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= @offer.description %></h5>
-    <p class="card-text"><%= @offer.price_per_day %>€/J</p>
+    <p class="card-text"><%= @offer.price_per_day %>€/h</p>
     <% if policy(@offer).update? %>
     <p class="button"><%= link_to "Change ton offre", edit_offer_path(@offer) %></p>
     <% end %>
