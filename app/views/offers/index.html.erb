@@ -15,13 +15,18 @@
     </a>
 </div>
 <br>
+
 <div class="container" style="padding-top: 20%;">
-<h1 >Number of offers : <%= @offers.count %> <br> </h1>
+<h1 id="find_best1" >Number of offers : <%= @offers.count %><br></h1>
+
 <% if policy(Offer).create? %>
 <br>
   <%= link_to "Propose tes services", new_offer_path, class: "button" %>
+
 <% end %>
+<h1 id="scroll">SCROLL DOWN TO SEE ALL THE OFFERS</h1>
 </div>
+
 
 <br>
 <div class="cards">
