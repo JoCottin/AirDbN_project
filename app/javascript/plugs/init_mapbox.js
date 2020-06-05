@@ -1,7 +1,6 @@
-import mapboxgl from 'mapbox-gl/dist/mapbox-gl.js'
-const mapElement = document.getElementById('map');
+import mapboxgl from 'mapbox-gl';
 
-const addMarkers = (map, markers) => {
+const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
@@ -16,15 +15,16 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 const initMapbox = () => {
+  const mapElement = document.getElementById('map');
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v11'
+      style: 'mapbox://styles/mapbox/streets-v10'
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkers(map, markers);
+    addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
 };
