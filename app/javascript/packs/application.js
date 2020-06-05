@@ -8,7 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 import "bootstrap";
-import { initMapbox } from '../plugin/init_mapbox';
+import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -40,7 +40,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-import { initMapbox } from '../plugins/init_mapbox'
 import { initAutocomplete } from '../plugins/init_autocomplete';
 
 initMapbox();
