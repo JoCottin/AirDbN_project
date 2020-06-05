@@ -1,5 +1,9 @@
 <% if @user.dj %>
-<h1 style="padding-left: 30px;">Salut mon DJ</h1>
+
+<div class="container" style="padding-top: 20%;">
+<h2 class="home"><span>Salut mon DJ</span></h2>
+<h2 id="scroll">SCROLL DOWN TO SEE ALL YOUR BOOKINGS</h2>
+</div>
   <div class="cards">
     <% @offers.each do |offer|  %>
 
@@ -30,7 +34,10 @@
 </div>
 
   <% else %>
-  <h1 style="padding: 30px;">Salut le gueux</h1>
+  <div class="container" style="padding-top: 20%;">
+<h2 class="home"><span>Salut le gueux</span></h2>
+<h2 id="scroll">SCROLL DOWN TO SEE ALL YOUR BOOKINGS</h2>
+</div>
   <div class="cards">
   <% current_user.bookings.each do |booking| %>
 
