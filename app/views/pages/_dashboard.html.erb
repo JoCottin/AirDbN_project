@@ -1,5 +1,5 @@
 <% if @user.dj %>
-<h1>Salut mon DJ</h1>
+<h1 style="padding-left: 30px;">Salut mon DJ</h1>
   <div class="cards">
     <% @offers.each do |offer|  %>
 
@@ -21,14 +21,16 @@
 
     <% end %>
   <% end %>
-  <div id="map"
-     style="width: 100%; height: 300px;"
-     data-markers="<%= @markers.to_json %>">
-</div>
+
   </div>
+  <div id="map"
+     style="width: 100%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
   <% else %>
-  <h1>Salut le gueux</h1>
+  <h1 style="padding: 30px;">Salut le gueux</h1>
   <div class="cards">
   <% current_user.bookings.each do |booking| %>
 
@@ -45,7 +47,7 @@
           <p class="card-text">Price per day : <%= price %>€/J</p>
           <p class="card-text">Price per day : <%= price * booking.duration %> €</p>
           <%= link_to "Go to the offer", offer_path(booking.offer), class: "button" %>
-
+          <br>
           <%= link_to "Cancel my party", booking_path(booking), class: "button",
 
           method: :delete,
