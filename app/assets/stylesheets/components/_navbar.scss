@@ -10,3 +10,13 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.dropdown-item{
+
+  color: black;
+
+  &:hover {
+  background-color: #CA1638;
+  color: black;
+}
+}
